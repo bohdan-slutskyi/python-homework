@@ -14,7 +14,20 @@ from collections import Counter
 
 
 def char_count(text):
-    pass
+    # Counter считает, сколько раз встречается каждый символ.
+    # Текст привести к нижнему регистру
+    # и оставить только буквы. Пробел и знак "!" считать не нужно.
+    letters = []
+
+    for char in text.lower():
+        # isalpha() возвращает True только для букв.
+        # Отсекаем пробелы, цифры и знаки препинания.
+        if char.isalpha():
+            letters.append(char)
+
+    # Counter вернёт словарь-подобный объект:
+    # ключ = буква, значение = сколько раз она встретилась.
+    return Counter(letters)
 
 
 text = "Programming is fun!"
