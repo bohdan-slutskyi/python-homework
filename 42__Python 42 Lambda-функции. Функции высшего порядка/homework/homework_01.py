@@ -27,14 +27,23 @@ orders = [
     {"product": "Keyboard", "price": 100},
     {"product": "Monitor", "price": 300},
     {"product": "Chair", "price": 800},
-    {"product": "Desk", "price": 400}
+    {"product": "Desk", "price": 400},
 ]
 
-sample = ['Chair', 'Laptop']
+sample = ["Chair", "Laptop"]
 
 
 def select_expensive_orders(ords):
-    pass
+    # filter проходит по заказам.
+    # lambda проверяет: цена больше 500 или нет.
+    expensive_orders = filter(lambda order: order["price"] > 500, ords)
+
+    # map проходит по дорогим заказам.
+    # lambda берет из одного заказа название продукта.
+    product_names = map(lambda order: order["product"], expensive_orders)
+
+    # sorted сортирует названия по алфавиту.
+    return sorted(product_names)
 
 
 result = select_expensive_orders(orders)

@@ -13,7 +13,7 @@ sales = [
     ("Mouse", 50, 20),
     ("Keyboard", 30, 50),
     ("Monitor", 10, 300),
-    ("Chair", 20, 800)
+    ("Chair", 20, 800),
 ]
 
 Пример вывода:
@@ -26,14 +26,23 @@ sales = [
     ("Mouse", 50, 20),
     ("Keyboard", 30, 50),
     ("Monitor", 10, 300),
-    ("Chair", 20, 800)
+    ("Chair", 20, 800),
 ]
 
-sample = {'Chair': 16000, 'Laptop': 6000, 'Monitor': 3000, 'Keyboard': 1500, 'Mouse': 1000}
+sample = {"Chair": 16000, "Laptop": 6000, "Monitor": 3000, "Keyboard": 1500, "Mouse": 1000}
 
 
 def calculate_sales(sales):
-    pass
+    # map проходит по продажам.
+    # lambda считает выручку одного товара: количество * цена.
+    revenue_pairs = map(lambda sale: (sale[0], sale[1] * sale[2]), sales)
+
+    # sorted сортирует пары по выручке.
+    # lambda берет выручку из одной пары.
+    sorted_pairs = sorted(revenue_pairs, key=lambda pair: pair[1], reverse=True)
+
+    # dict превращает пары в словарь.
+    return dict(sorted_pairs)
 
 
 result = calculate_sales(sales)
