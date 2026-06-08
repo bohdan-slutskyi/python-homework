@@ -31,7 +31,6 @@ sales = [
 
 sample = {"Chair": 16000, "Laptop": 6000, "Monitor": 3000, "Keyboard": 1500, "Mouse": 1000}
 
-
 def calculate_sales(sales):
     # sale - это один элемент из списка sales, то есть кортеж (товар, количество, цена).
     # map запоминает правило: для каждого товара sale[0] посчитать выручку (количество * цена = sale[1] * sale[2]).
@@ -46,7 +45,6 @@ def calculate_sales(sales):
 
     # dict собирает отсортированные пары в итоговый словарь.
     return dict(sorted_pairs)
-
 
 result = calculate_sales(sales)
 print(result)

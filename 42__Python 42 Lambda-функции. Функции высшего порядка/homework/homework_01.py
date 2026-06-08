@@ -32,20 +32,18 @@ orders = [
 
 sample = ["Chair", "Laptop"] # Это ожидаемый результат, с которым мы сравниваем работу функции.
 
-
 def select_expensive_orders(ords):
-    # filter запоминает правило: оставить только заказы дороже 500.
+    # Filter запоминает правило: оставить только заказы дороже 500.
     # lambda проверяет, должен ли текущий заказ попасть в итоговый результат.
     expensive_orders = filter(lambda order: order["price"] > 500, ords)
 
-    # map получает только те заказы, которые filter оставил после отбора.
-    # lambda извлекает из каждого отобранного заказа название продукта.
+    # Map получает только те заказы, которые filter оставил после отбора.
+    # Lambda извлекает из каждого отобранного заказа название продукта.
     product_names = map(lambda order: order["product"], expensive_orders)
     # Результатом работы map будет объект, который будет выдавать названия дорогих продуктов.
 
     # sorted сортирует названия продуктов по алфавиту и возвращает готовый список.
     return sorted(product_names)
-
 
 result = select_expensive_orders(orders)
 print(result)
