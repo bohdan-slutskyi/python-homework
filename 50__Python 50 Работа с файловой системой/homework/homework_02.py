@@ -23,14 +23,12 @@ python script.py /home/user/PycharmProjects/project1 .log
 import os
 import sys
 
-# Источники теории:
-# - materials/theory_02__os_methods.md — таблица "Основные методы модуля os"
-#   Используются: os.path.isdir(), os.path.join(), os.makedirs(), os.remove(), os.sep.
-# - materials/theory_05__open.md — пример создания файла через open(..., "w").
-# - materials/theory_03__os_walk.py — пример рекурсивного обхода папок через os.walk().
-# - materials/theory_05__sys_argv.py — пример с sys.argv:
-#   sys.argv[0] — имя скрипта, sys.argv[1:] — аргументы командной строки.
-
+# Источник:
+# - theory_02__os_methods.md — os.path.isdir(), os.path.join(), os.makedirs(), os.remove(), os.sep
+# - theory_03__os_walk.py — рекурсивный обход папок через os.walk()
+# - theory_05__open.md — создание файла через open(..., "w")
+# - theory_05__sys_argv.py — аргументы командной строки через sys.argv
+# В этой задаче файлы ищутся рекурсивно по расширению и удаляются после подтверждения пользователя.
 
 # Для тестирования удаления:
 # создаём тестовые файлы error.log, system.log, old.log, debug.log
