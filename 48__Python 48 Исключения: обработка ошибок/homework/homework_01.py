@@ -22,6 +22,10 @@
 
 """
 
+# Источник:
+# - theory_02_try_except_finally.py — try / except / finally
+# - theory_03_try_except_else_finally.py — try / except / else / finally
+# В этой задаче используются try / except и отдельные except для разных ошибок.
 
 def safe_division(dividend, divisor) -> bool:
     """Пытается разделить dividend на divisor, обрабатывая ошибки.
