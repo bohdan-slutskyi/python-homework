@@ -16,6 +16,12 @@ import logging
 import sys
 
 
+# Источник:
+# - theory__root_logging.md — basicConfig, FileHandler, StreamHandler, Formatter
+# - theory_02_try_except_finally.py — try / except / finally
+# - theory_03_try_except_else_finally.py — try / except / else / finally
+# В этой задаче предыдущая функция safe_division() дополнена логированием ошибок.
+
 # Настраиваем два обработчика: один пишет в файл, другой выводит на экран
 file_handler = logging.FileHandler("errors.log", encoding="utf-8")
 console_handler = logging.StreamHandler(sys.stderr)
@@ -34,7 +40,7 @@ logging.basicConfig(
 )
 
 
-def safe_division(dividend, divisor):
+def safe_division(dividend, divisor) -> bool:
     """Пытается разделить dividend на divisor, ошибки записывает в лог.
 
     Возвращает True при успешном делении, False при ошибке.
@@ -63,7 +69,8 @@ safe_division(5, 0)         # False
 safe_division(5, 2)         # True
 safe_division('5.5', '1.2') # True
 
-# 2025-11-07 11:41:34,147 - ERROR - homework_33_02.py - 48 - Ошибка: Введено некорректное число: could not convert string to float: 'a'
-# 2025-11-07 11:41:34,148 - ERROR - homework_33_02.py - 50 - Ошибка: Деление на ноль невозможно: float division by zero
+# Пример возможного вывода:
+# 2025-11-07 11:41:34,147 - ERROR - homework_02.py - ... - Ошибка: Введено некорректное число: could not convert string to float: 'a'
+# 2025-11-07 11:41:34,148 - ERROR - homework_02.py - ... - Ошибка: Деление на ноль невозможно: float division by zero
 # Результат: 2.5
 # Результат: 4.583333333333334
