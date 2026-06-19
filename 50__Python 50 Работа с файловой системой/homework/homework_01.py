@@ -24,14 +24,18 @@ import os
 import sys
 
 
+# Источник:
+# - theory_02__os_methods.md — os.listdir(), os.path.join(), os.path.isdir(), os.path.isfile()
+# - theory_05__sys_argv.py — аргументы командной строки через sys.argv
+# В этой задаче путь берётся из командной строки, а содержимое директории делится на папки и файлы.
+
+
 def print_directory_content(directory_path: str) -> None:
     """Выводит отдельно папки и файлы из указанной директории."""
     folders: list[str] = []
     files: list[str] = []
 
     # Получаем имена элементов внутри директории и разделяем их по типу.
-    # theory_02__os_methods.md: os.listdir(path) возвращает список файлов/папок.
-    # os.path.join() собирает полный путь, а isdir()/isfile() проверяют тип.
     for item_name in os.listdir(directory_path):
         item_path = os.path.join(directory_path, item_name)
 
@@ -58,7 +62,6 @@ def main() -> None:
         return
 
     # Берём путь к директории из аргумента командной строки.
-    # theory_05__sys_argv.py: sys.argv[1] — первый аргумент после имени скрипта.
     directory_path = sys.argv[1]
 
     if not os.path.exists(directory_path):
