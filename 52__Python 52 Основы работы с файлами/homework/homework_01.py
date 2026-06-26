@@ -19,6 +19,9 @@
 
 """
 
+# источники:
+# - materials/theory_01__open.md — open(), чтение/запись файлов, with, обработка FileNotFoundError
+
 def find_keyword(filename: str, keyword: str) -> None:
     try:
         with open(filename, 'r') as file:

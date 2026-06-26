@@ -21,6 +21,9 @@
 
 """
 
+# источники:
+# - materials/theory_01__open.md — open(), чтение/запись файлов, with, обработка FileNotFoundError, построчное чтение файла
+
 def remove_duplicates(filename: str) -> None:
     try:
         with open(filename, 'r') as file:
